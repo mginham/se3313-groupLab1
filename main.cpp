@@ -9,20 +9,32 @@ using namespace std;
 int main() {
     // Define variables
     string userData = "user";
+    int temp = -1;
+    bool exitLoop = false;
 
-    // Prompt the user to imput their name and print it in a hello
-    cout << "Please enter your name: ";
-    cin >> userData;
-    cout << "\nHello " << userData << endl;
+    do {
+        // Prompt the user to imput a word and print it
+        cout << "Please enter a word (or type 'Done' to exit): ";
+        cin >> userData;
+        cout << "\nYou entered: " << userData << endl;
 
-    // Fork the process into a parent and a child
-    fork();
+        // Fork the process into a parent and a child
+        fork();
 
-    // Prompt the user to terminate the process
-    cout << "\nPlease enter 'Done' to terminate this process: ";
-    cin >> userData;
+        // Check if loop should exit
+        temp = !userData.compare("Done"); // 1 = equal, 0 = not equal
+        if (temp == 1) {exitLoop=true;} // if equal, exit loop
+            else if (temp == 0) {exitLoop=false;} // if not equal, continue loop
+            else { // if temp returns other, close the loop
+                cout << "Something is wrong";
+                exitLoop=true;
+            }
 
+    } while (exitLoop == false); // Continue the loop until user inputs "Done"
+
+    // Notfy the user and terminate the process
     cout << "\nGoodbye" << endl;
+    exit(EXIT_SUCCESS);
 
-    return 0;
+    return EXIT_SUCCESS;
 } // end Main
