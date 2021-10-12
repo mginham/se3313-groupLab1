@@ -15,7 +15,7 @@ int main() {
     // Receive input and fork
     do {
         // Prompt the user to imput a word and print it
-        cout << "Please enter a word (or type 'Done' to exit): ";
+        cout << "\nPlease enter a word (or type 'Done' to exit): ";
         cin >> userData;
         cout << "\nYou entered: " << userData << endl;
 
