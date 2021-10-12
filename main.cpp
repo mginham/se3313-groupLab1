@@ -12,6 +12,7 @@ int main() {
     int temp = -1;
     bool exitLoop = false;
 
+    // Receive input and fork
     do {
         // Prompt the user to imput a word and print it
         cout << "Please enter a word (or type 'Done' to exit): ";
