@@ -23,7 +23,7 @@ int main() {
     while(userData != "Done") {
         // Prompt the user for input
         cout << "\nPlease enter a word (or type 'Done' to exit): ";
-        cin >> userData;
+        getline(cin, userData);
 
         // Fork the process and insert the input into the child array
         children.push_back(fork());
